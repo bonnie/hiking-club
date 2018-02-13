@@ -24,14 +24,14 @@ export default class App extends Component {
   }
 
   // this will call the user profile on page load.
-  // componentDidMount() {
-  //   this.showProfile();
-  //   this.getReviews();
-  //   this.getJournals();
-  // };
+  componentDidMount() {
+    this.showProfile();
+    this.getReviews();
+    this.getJournals();
+  };
 
   showProfile() {
-    axios.get('https://localhost:3001/users/1')
+    axios.get('https://localhost:3000/users/1')
       .then((user) => {
         const { name, email } = user;
         const profilePicture = user.profile_picture;
