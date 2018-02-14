@@ -17,8 +17,6 @@ export default class App extends Component {
       name: 'Plankton',
       profilePicture: 'http://www.mascotdesigngallery.com/wp/wp-content/uploads/2013/11/21897-cartoons-drawings-i-needed-to-use-a-picture-of-plankton-from-spongebob_1920x1080.jpg',
       email: 'plankton@plankton.org',
-      reviews: [],
-      journals: [],
     }
   }
 
