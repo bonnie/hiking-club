@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Reviews = function(props) {
+const Review = function(props) {
   return (
     <div>
       <h2>I am a review.</h2>
@@ -8,4 +8,4 @@ const Reviews = function(props) {
   );
 }
 
-export default Reviews;
+export default Review;
