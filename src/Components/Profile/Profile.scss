@@ -1,11 +1,23 @@
 .profile-container {
-  border: 1px solid grey;
+  border: 1px solid red;
   color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.user-profile {
+  border: 1px solid red;
   max-width: 30%;
 }
 
+.user-content {
+  border: 1px solid red;
+  min-width: 60%;
+}
+
 .profile-pic {
-  border: 1px solid grey;
+  border: 1px solid red;
   height: 200px;
   width: 200px;
 }

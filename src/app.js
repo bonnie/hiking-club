@@ -5,7 +5,6 @@ import './index.scss';
 
 import Navbar from './Components/Navbar/Navbar';
 import Profile from './Components/Profile/Profile';
-import Reviews from './Components/Reviews/Reviews';
 
 export default class App extends Component {
   constructor(props) {
@@ -76,7 +75,6 @@ export default class App extends Component {
           name={this.state.name}
           email={this.state.email}
           />
-          <Reviews />
         </div>
       );
   };
