@@ -17,8 +17,6 @@ export default class App extends Component {
       title: 'Profile Page',
       name: 'Plankton',
       email: 'plankton@plankton.org',
-      reviews: [],
-      journals: [],
     }
   }
 
