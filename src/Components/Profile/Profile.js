@@ -14,6 +14,7 @@ export default class Profile extends Component {
     this.state = {
       reviews: [],
       journals: [],
+      map: '',
     };
   };
 
@@ -48,7 +49,12 @@ export default class Profile extends Component {
       // .catch(console.error);
   };
 
+  getMap() {
+    // okay, we are essentially going to fetch the latitude and longitude of all of the trails associated with the current user_id (either in reviews or journals), and then pass those coordinates each as objects in an array to the google maps api (another fetch call?). that should, in turn, allow us to return the map and serve it to the component. Currently setting up the map as a string in state. assuming it will be a url eventually.
+  }
+
   getAllUserContent() {
+    // this.getMap();
     this.getReviews();
     this.getJournals();
   }
