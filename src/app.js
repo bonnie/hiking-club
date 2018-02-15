@@ -13,9 +13,9 @@ export default class App extends Component {
     // temporarily hardcoding variables to test this out.
     this.state = {
       isLoggedIn: false,
+      userId: 4,
       title: 'Profile Page',
       name: 'Plankton',
-      profilePicture: 'http://www.mascotdesigngallery.com/wp/wp-content/uploads/2013/11/21897-cartoons-drawings-i-needed-to-use-a-picture-of-plankton-from-spongebob_1920x1080.jpg',
       email: 'plankton@plankton.org',
     }
   }
@@ -23,12 +23,10 @@ export default class App extends Component {
   // this will call the user profile on page load.
   componentDidMount() {
     this.showProfile();
-    this.getReviews();
-    this.getJournals();
   };
 
   showProfile() {
-    axios.get('https://localhost:3000/users/1')
+    axios.get(`https://localhost:3000/users/${this.state.userId}`)
       .then((user) => {
         const { name, email } = user;
         const profilePicture = user.profile_picture;
@@ -41,35 +39,12 @@ export default class App extends Component {
       .catch(console.error);
   }
 
-  // gets all of the reviews for a user.
-  getReviews() {
-    axios.get('https://localhost:3000/users/1/reviews')
-      .then((reviews) => {
-        this.setState({
-          reviews: reviews,
-        });
-      })
-      .catch(console.error);
-  };
-
-  // gets all of the journals for a user.
-  getJournals() {
-    axios.get('https://localhost:3000/users/1/journals')
-      .then((journals) => {
-        this.setState({
-          journals: journals,
-        });
-      })
-      .catch(console.error);
-  };
-
   render() {
       return (
         <div>
           <Navbar />
           <h1>{this.state.title}</h1>
           <Profile
-          profilePicture={this.state.profilePicture}
           name={this.state.name}
           email={this.state.email}
           />
