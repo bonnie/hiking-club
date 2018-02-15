@@ -45,7 +45,7 @@ class Profile extends Component {
 
   // gets all of the journals for a user.
   getJournals() {
-    // dummy data until api is hooked up.
+    // dummy data until api is hooked up. this is currently not working
     const fakeJournals = [{id: 1, trail_id: 2, user_id: 4, title: "Worst Hike Ever!", entry: "I got stung by angry bees."}, {
       id: 2, user_id: 2, title: "I love trees!", entry: "Trees are the best!"}];
     console.log('fakeJournals', fakeJournals);
