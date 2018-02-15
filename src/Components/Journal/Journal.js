@@ -4,7 +4,8 @@ import './Journal.scss';
 const Journal = function(props) {
   return (
     <div>
-      <h2>I am a journal.</h2>
+      <h2>{props.title}</h2>
+      <p>{props.entry}</p>
     </div>
   );
 }
