@@ -5,8 +5,8 @@ const Journal = function(props) {
   console.log('review journals', props);
   return (
     <div>
-      <h2>Title: {props.title} </h2>
-      <p>Entry: {props.entry} </p>
+      <h4>{props.title}</h4>
+      <p>{props.entry}</p>
     </div>
   );
 };

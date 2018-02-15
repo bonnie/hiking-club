@@ -72,7 +72,7 @@ export default class Profile extends Component {
 
     if (this.state.reviews.length > 0) {
       reviewList = (
-        <div>
+        <div className="journal">
         {this.state.reviews.map((review, index) =>
           <Review
           key={review.id}
@@ -93,7 +93,7 @@ export default class Profile extends Component {
 
     if (this.state.journals.length > 0) {
       journalList = (
-        <div>
+        <div className="journal">
         {this.state.journals.map((journal, index) =>
           <Journal
             key={journal.id}
@@ -116,13 +116,14 @@ export default class Profile extends Component {
         <div className="user-profile">
           <img className="profile-pic" src={this.props.profilePicture}/>
           <h3 className="user-name">Name: {this.props.name}</h3>
-          <h4>Email: {this.props.email}</h4>
         </div>
         <div className="user-content">
           <div className="review-container">
+            <h2>Your Reviews</h2>
             {reviewList}
           </div>
           <div className="journal-container">
+            <h2>Your Journals</h2>
             {journalList}
           </div>
         </div>

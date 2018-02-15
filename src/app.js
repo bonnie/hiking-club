@@ -14,9 +14,8 @@ export default class App extends Component {
     this.state = {
       isLoggedIn: false,
       userId: 4,
-      title: 'Profile Page',
-      name: 'Plankton',
-      email: 'plankton@plankton.org',
+      name: '',
+      email: '',
     }
   }
 
@@ -26,27 +25,30 @@ export default class App extends Component {
   };
 
   showProfile() {
-    axios.get(`https://localhost:3000/users/${this.state.userId}`)
-      .then((user) => {
-        const { name, email } = user;
-        const profilePicture = user.profile_picture;
+    const fakeUser = {
+      userId: 4,
+      name: 'Smokey Bear',
+      email: 'smokey@thebear.com'
+    }
+    // axios.get(`https://localhost:3000/users/${this.state.userId}`)
+    //   .then((user) => {
+    //     const { name, email } = user;
+    //     const profilePicture = user.profile_picture;
         this.setState({
-          name: name,
-          profilePicture: profilePicture,
-          email: email,
+          userId: fakeUser.id,
+          name: fakeUser.name,
+          email: fakeUser.email,
         });
-      })
-      .catch(console.error);
+      // })
+      // .catch(console.error);
   }
 
   render() {
       return (
         <div>
           <Navbar />
-          <h1>{this.state.title}</h1>
           <Profile
           name={this.state.name}
-          email={this.state.email}
           />
         </div>
       );
