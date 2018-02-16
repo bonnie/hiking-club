@@ -1,0 +1,26 @@
+.modal-background {
+  background-color: rgba(0, 0, 0, 0.65);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.postcard {
+  background-color: #fff;
+  min-height: 30vh;
+  max-height: 60vh;
+  min-width: 40vw;
+  max-width: 50vw;
+  margin: 250px auto;
+  overflow: auto;
+  padding: 40px;
+  position: relative;
+}
+
+#close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
