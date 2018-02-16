@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import './index.scss';
 
+import Postcard from './Components/Postcard/Postcard';
 import Navbar from './Components/Navbar/Navbar';
 import Profile from './Components/Profile/Profile';
 
@@ -10,9 +11,11 @@ export default class App extends Component {
   constructor(props) {
     super(props);
 
-    // temporarily hardcoding variables to test this out.
+    this.closeModal = this.closeModal.bind(this);
+
     this.state = {
       isLoggedIn: false,
+      postCardShowing: true,
       userId: 4,
       name: '',
       email: '',
@@ -43,10 +46,22 @@ export default class App extends Component {
       // .catch(console.error);
   }
 
+  closeModal(e) {
+    e.preventDefault();
+    this.setState({
+      postCardShowing: false
+    })
+  }
+
   render() {
       return (
         <div>
-          <Navbar />
+          <Postcard
+          postCardShowing={this.state.postCardShowing}
+          closeModal={this.closeModal}
+          />
+          <Navbar 
+          />
           <Profile
           name={this.state.name}
           />
