@@ -11,16 +11,18 @@ export default class App extends Component {
   constructor(props) {
     super(props);
 
+    this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
 
     this.state = {
       isLoggedIn: false,
-      postCardShowing: true,
+      postCardShowing: false,
+      hasAccount: false,
       userId: 4,
       name: '',
       email: '',
     }
-  }
+  };
 
   // this will call the user profile on page load.
   componentDidMount() {
@@ -44,14 +46,19 @@ export default class App extends Component {
         });
       // })
       // .catch(console.error);
-  }
+  };
 
-  closeModal(e) {
-    e.preventDefault();
+  openModal(userStatus) {
     this.setState({
-      postCardShowing: false
+      postCardShowing: true,
     })
-  }
+  };
+
+  closeModal() {
+    this.setState({
+      postCardShowing: false,
+    })
+  };
 
   render() {
       return (
@@ -60,7 +67,9 @@ export default class App extends Component {
           postCardShowing={this.state.postCardShowing}
           closeModal={this.closeModal}
           />
-          <Navbar 
+          <Navbar
+          isLoggedIn={this.state.isLoggedIn}
+          openModal={this.openModal}
           />
           <Profile
           name={this.state.name}
