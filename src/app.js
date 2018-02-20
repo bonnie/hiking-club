@@ -3,7 +3,8 @@ import axios from 'axios';
 
 import './index.scss';
 
-import Postcard from './Components/Postcard/Postcard';
+import SignUp from './Components/Postcard/SignUp';
+import SignIn from './Components/Postcard/SignIn'
 import Navbar from './Components/Navbar/Navbar';
 import Profile from './Components/Profile/Profile';
 
@@ -11,7 +12,8 @@ export default class App extends Component {
   constructor(props) {
     super(props);
 
-    this.openModal = this.openModal.bind(this);
+    this.openSignUpModal = this.openSignUpModal.bind(this);
+    this.openSignInModal = this.openSignInModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
 
     this.state = {
@@ -48,11 +50,19 @@ export default class App extends Component {
       // .catch(console.error);
   };
 
-  openModal(userStatus) {
+  openSignUpModal(userStatus) {
     this.setState({
       postCardShowing: true,
+      hasAccount: false,
     })
   };
+
+  openSignInModal(userStatus) {
+    this.setState({
+      postCardShowing: true,
+      hasAccount: true,
+    })
+  }
 
   closeModal() {
     this.setState({
@@ -61,15 +71,29 @@ export default class App extends Component {
   };
 
   render() {
+    let modal = null;
+    if (!this.state.hasAccount) {
+      modal = (
+        <SignUp
+        postCardShowing={this.state.postCardShowing}
+        closeModal={this.closeModal}
+        />
+      )
+    } else {
+      modal = (
+        <SignIn
+        postCardShowing={this.state.postCardShowing}
+        closeModal={this.closeModal}
+        />
+      )
+    }
       return (
         <div>
-          <Postcard
-          postCardShowing={this.state.postCardShowing}
-          closeModal={this.closeModal}
-          />
+          {modal}
           <Navbar
           isLoggedIn={this.state.isLoggedIn}
-          openModal={this.openModal}
+          openSignUpModal={this.openSignUpModal}
+          openSignInModal={this.openSignInModal}
           />
           <Profile
           name={this.state.name}
