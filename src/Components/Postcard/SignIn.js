@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import './Postcard.scss';
 
-export default class Postcard extends Component {
+export default class SignIn extends Component {
   constructor(props) {
     super(props);
 
-    this.state ={
-      newUser: true,
+    this.state = {
+
     };
-  }
+  };
 
   render() {
-
     let postCard = null;
 
     if (!this.props.postCardShowing) {
@@ -23,20 +22,16 @@ export default class Postcard extends Component {
         <div className="modal-background">
           <div className="postcard">
             <button id="close-modal" onClick={this.props.closeModal}>&times;</button>
-            <form className="signup-form" method="POST" action="http://localhost:3000/signup">
+            <form className="signin-form" method="POST" action="http://localhost:3000/signin">
               <label>
                 Login
-                <input type="text" name="name" required />
+                <input type="email" name="email" required />
               </label>
               <label>
                 Password
-                <input type="password" name="password" required />
+                <input type="password" password="password" required />
               </label>
-              <label>
-                Email
-                <input type="email" name="email" required />
-              </label>
-              <button id="sign-up-btn" type="submit">Sign Up</button>
+              <button id="sign-in-btn" type="submit">Sign In</button>
             </form>
           </div>
         </div>
@@ -46,5 +41,5 @@ export default class Postcard extends Component {
     return (
       <div>{postCard}</div>
     )
-  }
-}
+  };
+};

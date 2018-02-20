@@ -11,8 +11,8 @@ const Navbar = function(props) {
       <div className="navbar-container">
         <p>Home</p>
         <p>Trails</p>
-        <p onClick={props.openModal}>Sign Up</p>
-        <p onClick={props.openModal}>Sign In</p>
+        <p onClick={props.openSignUpModal}>Sign Up</p>
+        <p onClick={props.openSignInModal}>Sign In</p>
       </div>
     )
   } else {
