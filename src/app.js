@@ -88,7 +88,7 @@ export default class App extends Component {
       )
     }
       return (
-        <div>
+        <div className="app-container">
           {modal}
           <Navbar
           isLoggedIn={this.state.isLoggedIn}
