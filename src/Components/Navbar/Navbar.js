@@ -8,7 +8,7 @@ const Navbar = function(props) {
 
   if (!props.isLoggedIn) {
     navBarLinks = (
-      <div className="navbar-container">
+      <div>
         <p>Home</p>
         <p>Trails</p>
         <p onClick={props.openSignUpModal}>Sign Up</p>
@@ -17,7 +17,7 @@ const Navbar = function(props) {
     )
   } else {
     navBarLinks = (
-      <div className="navbar-container">
+      <div>
       <p>Home</p>
       <p>Profile</p>
       <p>Trails</p>
@@ -26,7 +26,7 @@ const Navbar = function(props) {
     )
   }
   return (
-    <div>{navBarLinks}</div>
+    <div className="navbar-container">{navBarLinks}</div>
   );
 }
 
