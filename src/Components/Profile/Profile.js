@@ -22,8 +22,7 @@ export default class Profile extends Component {
   getReviews() {
     // dummy data until api is hooked up.
     const fakeReviews = [
-      {id: 1, user_id: 4, rating: 4, comment: "great!"},
-      {id: 2, user_id: 1, rating: 3, comment: "blah!"}
+      {id: 1, user_id: 4, rating: 4, comment: "great!"}
     ];
     // axios.get(`https://localhost:3000/users/${this.state.userId}/reviews`)
     //   .then((reviews) => {
