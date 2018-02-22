@@ -1,6 +1,4 @@
 import App from '../app';
-import Journal from '../Components/Journal/Journal';
-import Review from '../Components/Review/Review';
 import React from 'react';
 import { shallow, mount, enzyme } from 'enzyme';
 
