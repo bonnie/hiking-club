@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Review from '../Review/Review';
 import Journal from '../Journal/Journal';
-import MyFancyComponent from '../Map/Map';
+import MyMapComponent from '../Map/Map';
 
 import './Profile.scss';
 
@@ -119,7 +119,7 @@ export default class Profile extends Component {
 
     return (
       <div className="profile-container">
-        <MyFancyComponent />
+        <MyMapComponent />
         <div className="user-profile">
           <img className="profile-pic" src={this.props.profilePicture}/>
           <h3 className="user-name">Name: {this.props.name}</h3>
