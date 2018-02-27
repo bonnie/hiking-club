@@ -13,8 +13,10 @@ You will need to have Node (v. 8.0 or higher) and NPM installed. This project re
 - Fork and clone the repository.
 - `npm install` to get all required dependencies.
 - Create an `api.config.js` file with the following code:
-```module.exports = {
-  GOOGLE_API_SECRET: 'yourownapikeyhere'
+
+```
+module.exports = {
+  GOOGLE_API_SECRET = 'putyourownapikeyhere'
 }
 ```
 
@@ -30,11 +32,3 @@ You will need to have Node (v. 8.0 or higher) and NPM installed. This project re
 ## License
 
 This project is licensed under the MIT License.
-
-
-
-
-
-
-
-### Deployment
