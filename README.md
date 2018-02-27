@@ -22,7 +22,7 @@ module.exports = {
 
 ### Authors
 
-* **James McCormack** - [Framinus](https://github.com/framinus)
+* **James McCormack** - [framinus](https://github.com/framinus)
 
 * **Jenn Wilde** - [metalcanine](https://github.com/metalcanine)
 
