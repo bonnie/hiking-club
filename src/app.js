@@ -7,6 +7,7 @@ import SignUp from './Components/Postcard/SignUp';
 import SignIn from './Components/Postcard/SignIn'
 import Navbar from './Components/Navbar/Navbar';
 import Profile from './Components/Profile/Profile';
+import Trails from './Components/Trails/trails';
 
 export default class App extends Component {
   constructor(props) {
@@ -95,6 +96,7 @@ export default class App extends Component {
           openSignUpModal={this.openSignUpModal}
           openSignInModal={this.openSignInModal}
           />
+          <Trails />
           <Profile
           name={this.state.name}
           />
