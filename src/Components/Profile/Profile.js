@@ -101,7 +101,7 @@ export default class Profile extends Component {
       journalList = (
         <div className="journal">
         {this.state.journals.map((journal, index) =>
-          <Journal
+          <JournalEntry
             key={journal.id}
             trailId={journal.trail_id}
             user_id={journal.user_id}

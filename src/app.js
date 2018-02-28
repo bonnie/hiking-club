@@ -8,6 +8,7 @@ import SignIn from './Components/Postcard/SignIn'
 import Navbar from './Components/Navbar/Navbar';
 import Profile from './Components/Profile/Profile';
 import Trails from './Components/Trails/trails';
+import JournalDetail from './Components/JournalDetail/JournalDetail';
 
 export default class App extends Component {
   constructor(props) {
@@ -88,6 +89,7 @@ export default class App extends Component {
         />
       )
     }
+    // TODO: maybe look at how to use a layout to render the header and footer
       return (
         <div className="app-container">
           {modal}
@@ -96,6 +98,7 @@ export default class App extends Component {
           openSignUpModal={this.openSignUpModal}
           openSignInModal={this.openSignInModal}
           />
+          <JournalDetail />
           <Trails />
           <Profile
           name={this.state.name}
