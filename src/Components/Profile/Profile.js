@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Review from '../Review/Review';
-import Journal from '../Journal/Journal';
+import JournalEntry from '../JournalEntry/JournalEntry';
 import MyMapComponent from '../Map/Map';
 
 import './Profile.scss';

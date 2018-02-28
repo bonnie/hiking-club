@@ -1,7 +1,7 @@
 import React from 'react';
-import './Journal.scss';
+import './JournalEntry.scss';
 
-const Journal = function(props) {
+const JournalEntry = function(props) {
   return (
     <div className="journal-container">
       <h4 className="journal-title">{props.title}</h4>
@@ -10,4 +10,4 @@ const Journal = function(props) {
   );
 };
 
-export default Journal;
+export default JournalEntry;
