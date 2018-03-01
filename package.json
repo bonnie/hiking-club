@@ -62,7 +62,10 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-google-maps": "^9.4.5",
+    "react-redux": "^5.0.7",
     "recompose": "^0.26.0",
+    "redux": "^3.7.2",
+    "redux-promise": "^0.5.3",
     "style-loader": "^0.20.2"
   },
   "author": "team-mercurate",
