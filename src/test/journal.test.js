@@ -1,14 +1,14 @@
-import Journal from '../Components/Journal/Journal';
+import JournalEntry from '../Components/JournalEntry/JournalEntry';
 import React from 'react';
 import { shallow, mount, enzyme } from 'enzyme';
 
-describe('Journal component', () => {
-  const wrapper = shallow(<Journal />);
+describe('JournalEntry component', () => {
+  const wrapper = shallow(<JournalEntry />);
 
   it('should be selectable by class "journal-container"', () => {
     expect(wrapper.is('.journal-container')).toBe(true);
   });
   it('should mount in a full DOM', () => {
-    expect(mount(<Journal />).find('.journal-container').length).toBe(1);
+    expect(mount(<JournalEntry />).find('.journal-container').length).toBe(1);
   });
 })

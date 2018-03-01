@@ -1,10 +1,30 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { compose, withProps } from 'recompose';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
 import './Map.scss';
 import config from '../../../api.config';
 
 const GOOGLE_API_SECRET = config.GOOGLE_API_SECRET
+
+class ReallyBadNameComponent extends Component {
+
+  renderMarkers() {
+    return this.props.coordinates.map(coordinate =>
+      <Marker key={coordinate.lat +  coordinate.lng} position={{lat: coordinate.lat,lng: coordinate.lng}}
+              onClick={this.props.onMarkerClick} />
+    )
+  }
+
+  render() {
+    return (
+      <GoogleMap
+        defaultZoom={9}
+        defaultCenter={{lat: 37.7749295,lng: -122.4194155}}>
+        {this.props.isMarkerShown && this.renderMarkers()}
+      </GoogleMap>
+    )
+  }
+}
 
 const Map = compose(
   withProps({
@@ -15,16 +35,9 @@ const Map = compose(
   }),
   withScriptjs,
   withGoogleMap
-)((props) =>
-  <GoogleMap
-    defaultZoom={9}
-    defaultCenter={{lat: 37.7749295,lng: -122.4194155}}
-  >
-    {props.isMarkerShown && <Marker position={{lat: 37.7749295,lng: -122.4194155}} onClick={props.onMarkerClick} />}
-  </GoogleMap>
-)
+)(ReallyBadNameComponent)
 
-class MyMapComponent extends React.Component {
+class MyMapComponent extends Component {
   constructor(props){
     super(props)
     this.state = {
@@ -48,10 +61,17 @@ class MyMapComponent extends React.Component {
   }
 
   render() {
+    // return (
+    //   <Map
+    //     isMarkerShown={this.state.isMarkerShown}
+    //     onMarkerClick={this.handleMarkerClick}
+    //   />
+    // )
     return (
       <Map
-        isMarkerShown={this.state.isMarkerShown}
+        isMarkerShown={true}
         onMarkerClick={this.handleMarkerClick}
+        coordinates={[{lat: 37.7749295,lng: -122.4194155}, {lat: 37.7749295,lng: -122.5194155}]}
       />
     )
   }

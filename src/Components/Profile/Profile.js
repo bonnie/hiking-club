@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Review from '../Review/Review';
-import Journal from '../Journal/Journal';
+import JournalEntry from '../JournalEntry/JournalEntry';
 import MyMapComponent from '../Map/Map';
 
 import './Profile.scss';
@@ -101,7 +101,7 @@ export default class Profile extends Component {
       journalList = (
         <div className="journal">
         {this.state.journals.map((journal, index) =>
-          <Journal
+          <JournalEntry
             key={journal.id}
             trailId={journal.trail_id}
             user_id={journal.user_id}
