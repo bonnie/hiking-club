@@ -18,9 +18,10 @@ export default class App extends Component {
     this.openSignUpModal = this.openSignUpModal.bind(this);
     this.openSignInModal = this.openSignInModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.fakeSignUp = this.fakeSignUp.bind(this);
 
     this.state = {
-      isLoggedIn: true,
+      isLoggedIn: false,
       postCardShowing: false,
       hasAccount: false,
       userId: '',
@@ -73,6 +74,14 @@ export default class App extends Component {
     })
   };
 
+  fakeSignUp(event) {
+    event.preventDefault();
+    this.setState({
+      isLoggedIn: true,
+      postCardShowing: false,
+    })
+  }
+
   render() {
     let modal = null;
     if (!this.state.hasAccount) {
@@ -80,6 +89,7 @@ export default class App extends Component {
         <SignUp
         postCardShowing={this.state.postCardShowing}
         closeModal={this.closeModal}
+        fakeSignUp={this.fakeSignUp}
         />
       )
     } else {
@@ -87,6 +97,7 @@ export default class App extends Component {
         <SignIn
         postCardShowing={this.state.postCardShowing}
         closeModal={this.closeModal}
+        fakeSignUp={this.fakeSignUp}
         />
       )
     }

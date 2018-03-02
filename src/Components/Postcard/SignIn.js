@@ -31,7 +31,7 @@ export default class SignIn extends Component {
                 Password
                 <input type="password" password="password" required />
               </label>
-              <button id="sign-in-btn" type="submit">Sign In</button>
+              <button id="sign-in-btn" type="submit" onClick={this.props.fakeSignUp}>Sign In</button>
             </form>
           </div>
         </div>
