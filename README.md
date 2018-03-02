@@ -16,7 +16,7 @@ You will need to have Node (v. 8.0 or higher) and NPM installed. This project re
 
 ```
 module.exports = {
-  GOOGLE_API_SECRET = 'putyourownapikeyhere'
+  GOOGLE_API_SECRET: 'putyourownapikeyhere'
 }
 ```
 
