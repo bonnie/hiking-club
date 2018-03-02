@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import { Route, Switch } from 'react-router-dom';
 
 import './index.scss';
 
@@ -90,6 +91,13 @@ export default class App extends Component {
       )
     }
     // TODO: maybe look at how to use a layout to render the header and footer
+
+    // const ProfilePage = (props) => {
+    //   return (
+    //     <Profile name={this.state.name}/>
+    //   )
+    // }
+
       return (
         <div className="app-container">
           {modal}
@@ -98,11 +106,14 @@ export default class App extends Component {
           openSignUpModal={this.openSignUpModal}
           openSignInModal={this.openSignInModal}
           />
-          <JournalDetail />
-          <Trails />
-          <Profile
-          name={this.state.name}
-          />
+
+            <Switch>
+              <Route exact path="/journal" component={JournalDetail} />
+              <Route exact path="/trails" render={(props) => (
+                  <Trails trailName={this.state.trailName}/>)}/>
+              {/* <Route exact path="/profile" render={ProfilePage()} /> */}
+            </Switch>
+
         </div>
       );
   };
