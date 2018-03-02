@@ -36,7 +36,7 @@ export default class SignUp extends Component {
                 Email
                 <input type="email" name="email" required />
               </label>
-              <button id="sign-up-btn" type="submit">Sign Up</button>
+              <button id="sign-up-btn" type="submit" onClick={this.props.fakeSignUp}>Sign Up</button>
             </form>
           </div>
         </div>
