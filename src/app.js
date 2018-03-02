@@ -20,10 +20,10 @@ export default class App extends Component {
     this.closeModal = this.closeModal.bind(this);
 
     this.state = {
-      isLoggedIn: false,
+      isLoggedIn: true,
       postCardShowing: false,
       hasAccount: false,
-      userId: 4,
+      userId: '',
       name: '',
       email: '',
     }
@@ -92,12 +92,6 @@ export default class App extends Component {
     }
     // TODO: maybe look at how to use a layout to render the header and footer
 
-    // const ProfilePage = (props) => {
-    //   return (
-    //     <Profile name={this.state.name}/>
-    //   )
-    // }
-
       return (
         <div className="app-container">
           {modal}
@@ -111,9 +105,11 @@ export default class App extends Component {
               <Route exact path="/journal" component={JournalDetail} />
               <Route exact path="/trails" render={(props) => (
                   <Trails trailName={this.state.trailName}/>)}/>
-              {/* <Route exact path="/profile" render={ProfilePage()} /> */}
-            </Switch>
 
+              <Route exact path="/profile" render={(props) => (
+                <Profile name={this.state.name}/>)} />
+
+            </Switch>
         </div>
       );
   };
